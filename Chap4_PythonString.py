@@ -42,7 +42,63 @@ print('my_string[2:] =', my_string[2:])  # from position 2 to the end
 print('my_string[-1] =', my_string[-1])  # last characters
 print('my_string[-5:] =', my_string[-5:])
 print('my_string[-8:-4] =', my_string[-8:-4])
-
+# 7
+print('#7')
+string_1 = 'Hi'*10
+print('Repeated "Hi" 10 times: ', string_1)
+# 8
+print('#8')
+source_string = 'The Good, The Bad, The Beautiful, The Ugly'
+print('Source string:', source_string)
+print('Split using a space')
+print(source_string.split(' '))
+print('Split using a comma')
+print(source_string.split(','))
+# 9
+print('#9')
+my_string = 'This sentence, is  not      normal.'
+print('my_string:', my_string)
+print("my_string.count(' ') #count_space:", my_string.count(' '))
+print("my_string.count(',') #count_comma:", my_string.count(','))
+print("my_string.count('n') #count_'n':", my_string.count('n'))
+# 10
+print('#10')
+message = 'Nice guy!'
+print('message : ', message)
+print('message.replace("Nice", "Bad") =', message.replace("Nice", "Bad"))
+# 11
+print('#11')
+string = 'Python is not hard'
+print('string : ', string)
+print("string.find('Java') = ", string.find('Java'))
+print("string.find('Python') = ", string.find('Python'))
+print("string.find('not') = ", string.find('not'))
+print("string[string.find('not'):] = ", string[string.find('not'):])
+# 12
+print('#12')
+msg = 'Eleven is ' + str(11)
+print(msg, ', #use str() to convert int to string')
+print("'Bao' == 'Ben' : ", 'Bao' == 'Ben')  # '==' : so sanh bang
+print("'Bao' == 'Bao' : ", 'Bao' == 'Bao')
+print("'Bao' != 'bao' : ", 'Bao' != 'bao')  # '!=' : so sanh khac
+# 13
+some_string = 'Hello World'
+print('#13')
+print('some_string :', some_string)
+print('-' * 20)
+print("some_string.startswith('H') =", some_string.startswith('H'))
+print("some_string.startswith('h') =", some_string.startswith('h'))
+print("some_string.endswith('d') =", some_string.endswith('d'))
+print('some_string.istitle() =', some_string.istitle())  # Check if each word start with an upper case letter
+print('some_string.isupper() =', some_string.isupper())  # Check if all the characters in the text are in upper case
+print('some_string.islower() =', some_string.islower())  # Check if all the characters in the text are in lower case
+print('some_string.isalpha() =', some_string.isalpha())  # Check the string consists of alphabetic characters only
+print('-' * 20)
+print('some_string.upper() =', some_string.upper())
+print('some_string.lower() =', some_string.lower())
+print('some_string.title() =', some_string.title())
+print('some_string.swapcase() =', some_string.swapcase())
+print('"   xyz   ".strip() = ', " xyz ".strip())
 
 
 
