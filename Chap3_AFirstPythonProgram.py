@@ -12,5 +12,4 @@ print('Age: ', age)
 height = 1.75
 print('Height: ', height)
 print("I'm", name, ", I'm", age, "years old, my height is", height, 'metres.')
-# 3
 # To make a comment : Ctrl + /
