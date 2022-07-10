@@ -1,4 +1,4 @@
-# SIMPLE CALCULATOR APP
+# SIMPLE+ CALCULATOR APP
 
 def add(x, y):
     """" Adds two numbers """
@@ -20,35 +20,65 @@ def divide(x, y):
     return x / y
 
 
+def power(x, y):
+    """Performs exponential (power) calculation on operators"""
+    return x**y
+
+
+def floor_divide(x, y):
+    """Floor Division
+    - The division of operands where the result is the quotient
+    in which the digits after the decimal point are removed.
+    But if one of the operands is negative, the result is floored, i.e.,
+    rounded away from zero (towards negative infinity) −"""
+    return x//y
+
+
+def modulus(x, y):
+    """Divides x operand by y operand and returns remainder"""
+    return x % y
+
+
 def get_operation_choice():
     input_ok = False
     while not input_ok:
         print('Menu Options are:')
-        print('\t1. Add')
-        print('\t2. Subtract')
-        print('\t3. Multiply')
-        print('\t4. Divide')
+        print('\t1. Add (+)')
+        print('\t2. Subtract (-)')
+        print('\t3. Multiply (*)')
+        print('\t4. Divide (/)')
+        print('\t5. Power (**)')
+        print('\t6. Floor divide (//)')
+        print('\t7. Modulus (%)')
         print('-----------------')
         user_selection = input('Please make a selection: ')
-        if user_selection in ('1', '2', '3', '4'):
+        if user_selection in ('1', '2', '3', '4', '5', '6', '7'):
             input_ok = True
         else:
-            print('Invalid Input (must be 1 - 4)')
+            print('Invalid Input (must be 1 - 7)')
     print('-----------------')
     return user_selection
 
 
-def get_integer_input(message):
+def check_input(x):
+    try:
+        a = float(x)
+        return True
+    except ValueError:
+        print('The input must be an integer or float')
+        return False
+
+
+def get_float_input(message):
     value_as_string = input(message)
-    while not value_as_string.isnumeric():
-        print('The input must be an integer')
+    while not check_input(value_as_string):
         value_as_string = input(message)
-    return int(value_as_string)
+    return float(value_as_string)
 
 
 def get_numbers_from_user():
-    num1 = get_integer_input('Input the first number: ')
-    num2 = get_integer_input('Input the second number: ')
+    num1 = get_float_input('Input the first number: ')
+    num2 = get_float_input('Input the second number: ')
     return num1, num2
 
 
@@ -61,6 +91,12 @@ def operation_result(menu_choice, n1, n2):
         return multiply(n1, n2)
     elif menu_choice == '4':
         return divide(n1, n2)
+    elif menu_choice == '5':
+        return power(n1, n2)
+    elif menu_choice == '6':
+        return floor_divide(n1, n2)
+    elif menu_choice == '7':
+        return modulus(n1, n2)
 
 
 def check_if_user_has_finished():
@@ -90,7 +126,7 @@ def main():
         n1, n2 = get_numbers_from_user()
         # Select the operation
         result = operation_result(menu_choice, n1, n2)
-        print('Result:', result)
+        print('Result: {:0.3f}'.format(result))
         print('=================')
         # Determine if the user has finished
         finished = check_if_user_has_finished()
